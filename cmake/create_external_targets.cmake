@@ -7,6 +7,7 @@ add_compile_definitions(
 )
 
 # pybind11
+set(PYBIND11_CPP_STANDARD /std:c++latest)
 add_subdirectory( external/pybind11-2.2.3 )
 # also needs an installed Python version (We use Python3)
 

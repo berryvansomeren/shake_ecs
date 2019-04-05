@@ -93,14 +93,18 @@ endif()
 
 if(NOT (CMAKE_VERSION VERSION_LESS 3.0))  # CMake >= 3.0
   # Build an interface library target:
-  add_library(pybind11 INTERFACE)
+  if ( NOT TARGET pybind11 )
+	add_library(pybind11 INTERFACE)
+  endif()
   add_library(pybind11::pybind11 ALIAS pybind11)  # to match exported target
   target_include_directories(pybind11 INTERFACE $<BUILD_INTERFACE:${PYBIND11_INCLUDE_DIR}>
                                                 $<BUILD_INTERFACE:${PYTHON_INCLUDE_DIRS}>
                                                 $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
   target_compile_options(pybind11 INTERFACE $<BUILD_INTERFACE:${PYBIND11_CPP_STANDARD}>)
 
-  add_library(module INTERFACE)
+  if ( NOT TARGET module )
+    add_library(module INTERFACE)
+  endif()
   add_library(pybind11::module ALIAS module)
   if(NOT MSVC)
     target_compile_options(module INTERFACE -fvisibility=hidden)
@@ -112,7 +116,9 @@ if(NOT (CMAKE_VERSION VERSION_LESS 3.0))  # CMake >= 3.0
     target_link_libraries(module INTERFACE "-undefined dynamic_lookup")
   endif()
 
-  add_library(embed INTERFACE)
+  if ( NOT TARGET embed )
+    add_library(embed INTERFACE)
+  endif()
   add_library(pybind11::embed ALIAS embed)
   target_link_libraries(embed INTERFACE pybind11::pybind11 $<BUILD_INTERFACE:${PYTHON_LIBRARIES}>)
 endif()
