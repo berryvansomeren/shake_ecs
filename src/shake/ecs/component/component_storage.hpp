@@ -5,9 +5,9 @@
 
 #include "shake/core/contracts/contracts.hpp"
 #include "shake/core/data_structures/map.hpp"
-#include "shake/core/macro_debug_only.hpp"
-#include "shake/core/types/tagged_type.hpp"
-#include "shake/core/types/type_id.hpp"
+#include "shake/core/macros/macro_debug_only.hpp"
+#include "shake/core/type_traits/tagged_type.hpp"
+#include "shake/core/type_traits/type_id.hpp"
 
 #include "shake/ecs/entity/entity.hpp"
 #include "shake/ecs/component/component.hpp"

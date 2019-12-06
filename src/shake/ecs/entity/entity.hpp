@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-#include "shake/core/types/macro_strongly_typed_alias.hpp"
+#include "shake/core/macros/macro_strongly_typed_alias.hpp"
 
 namespace shake {
 namespace ecs {

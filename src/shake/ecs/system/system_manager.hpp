@@ -7,7 +7,7 @@
 
 #include "shake/core/contracts/contracts.hpp"
 #include "shake/core/data_structures/map.hpp"
-#include "shake/core/macro_debug_only.hpp"
+#include "shake/core/macros/macro_debug_only.hpp"
 
 #include "shake/ecs/system/system.hpp"
 #include "shake/ecs/system/python_system.hpp"

@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include "shake/core/types/tagged_type.hpp"
+#include "shake/core/type_traits/tagged_type.hpp"
 #include "shake/core/data_structures/map.hpp"
 #include "shake/core/data_structures/string.hpp"
 

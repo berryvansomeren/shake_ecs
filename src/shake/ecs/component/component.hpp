@@ -4,8 +4,8 @@
 #include "shake/core/data_structures/string.hpp"
 #include "shake/core/math/transform_2d.hpp"
 #include "shake/core/math/transform_3d.hpp"
-#include "shake/core/types/macro_strongly_typed_alias.hpp"
-#include "shake/core/types/type_id.hpp"
+#include "shake/core/macros/macro_strongly_typed_alias.hpp"
+#include "shake/core/type_traits/type_id.hpp"
 
 #include "shake/graphics/render_pack.hpp"
 

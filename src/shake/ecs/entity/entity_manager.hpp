@@ -3,8 +3,8 @@
 
 #include "shake/core/contracts/contracts.hpp"
 #include "shake/core/data_structures/set.hpp"
-#include "shake/core/macro_debug_only.hpp"
-#include "shake/core/types/macro_property.hpp"
+#include "shake/core/macros/macro_debug_only.hpp"
+#include "shake/core/macros/macro_property.hpp"
 
 #include "entity.hpp"
 
