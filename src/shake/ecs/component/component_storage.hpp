@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "shake/core/contracts/contracts.hpp"
-#include "shake/core/data_structures/map.hpp"
+#include "shake/core/std/map.hpp"
 #include "shake/core/macros/macro_debug_only.hpp"
 #include "shake/core/type_traits/tagged_type.hpp"
 #include "shake/core/type_traits/type_id.hpp"

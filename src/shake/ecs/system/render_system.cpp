@@ -57,7 +57,7 @@ void update_3d( float dt, World* world, const std::vector<EntityId>& entity_id_s
 } // namespace anonymous
 
 //----------------------------------------------------------------
-void RenderSystem::update( float dt, World* world, const std::vector<EntityId>& entity_id_set )
+void RenderSystem::render( float dt, World* world, const std::vector<EntityId>& entity_id_set )
 {
     update_2d( dt, world, entity_id_set );
     update_3d( dt, world, entity_id_set );

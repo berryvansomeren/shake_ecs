@@ -6,7 +6,7 @@
 #include <pybind11/pybind11.h>
 
 #include "shake/core/contracts/contracts.hpp"
-#include "shake/core/data_structures/map.hpp"
+#include "shake/core/std/map.hpp"
 #include "shake/core/macros/macro_debug_only.hpp"
 
 #include "shake/ecs/system/system.hpp"
@@ -65,7 +65,7 @@ public:
         // This uses the aliasing shared ptr constructor,
         // which makes a distinciton between the object that it owns / refers to
         // and the object / data that it actually stores
-        m_python_systems.emplace_back( keep_python_state_alive, ptr );
+        //m_systems.emplace_back( keep_python_state_alive, ptr );
     }
 
     //----------------------------------------------------------------
@@ -86,23 +86,14 @@ public:
             vec.emplace_back( entity_id );
         }
 
-        // First update all c++ systems
         for ( auto& system : m_systems )
         {
             system.second->update( dt, world, vec );
         }
-
-        // Then update all Python systems
-        for ( auto& system : m_python_systems )
-        {
-            system->update( dt, world, vec );
-        }
-
     }
 
 private:
     SystemMap m_systems;
-    PythonSystemStorage m_python_systems;
 };
 
 } // namespace ecs

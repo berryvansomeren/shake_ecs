@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "shake/core/data_structures/set.hpp"
+#include "shake/core/std/set.hpp"
 
 #include "shake/ecs/entity/entity.hpp"
 #include "shake/ecs/world.hpp"

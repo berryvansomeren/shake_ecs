@@ -4,8 +4,8 @@
 #include <memory>
 
 #include "shake/core/type_traits/tagged_type.hpp"
-#include "shake/core/data_structures/map.hpp"
-#include "shake/core/data_structures/string.hpp"
+#include "shake/core/std/map.hpp"
+#include "shake/core/std/string.hpp"
 
 #include "shake/ecs/component/component.hpp"
 #include "shake/ecs/component/component_manager.hpp"

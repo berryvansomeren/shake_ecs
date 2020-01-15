@@ -1,7 +1,7 @@
 #ifndef COMPONENT_HPP
 #define COMPONENT_HPP
 
-#include "shake/core/data_structures/string.hpp"
+#include "shake/core/std/string.hpp"
 #include "shake/core/math/transform_2d.hpp"
 #include "shake/core/math/transform_3d.hpp"
 #include "shake/core/macros/macro_strongly_typed_alias.hpp"

@@ -1,7 +1,7 @@
 #ifndef COMPONENT_MANAGER_HPP
 #define COMPONENT_MANAGER_HPP
 
-#include "shake/core/data_structures/map.hpp"
+#include "shake/core/std/map.hpp"
 #include "shake/core/type_traits/hierarchical_cast.hpp"
 #include "shake/core/type_traits/type_id.hpp"
 

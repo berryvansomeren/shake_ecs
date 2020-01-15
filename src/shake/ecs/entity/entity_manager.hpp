@@ -2,7 +2,7 @@
 #define ENTITY_MANAGER_HPP
 
 #include "shake/core/contracts/contracts.hpp"
-#include "shake/core/data_structures/set.hpp"
+#include "shake/core/std/set.hpp"
 #include "shake/core/macros/macro_debug_only.hpp"
 #include "shake/core/macros/macro_property.hpp"
 

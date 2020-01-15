@@ -6,10 +6,10 @@
 namespace shake {
 namespace ecs {
 
-class RenderSystem : public System
+class RenderSystem
 {
 public:
-    virtual void update( float dt, World* world, const std::vector<EntityId>& entity_id_set ) override;
+    virtual void render( float dt, World* world, const std::vector<EntityId>& entity_id_set );
 };
 
 } // namespace ecs

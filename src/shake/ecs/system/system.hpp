@@ -6,7 +6,7 @@
 #include "shake/core/macros/macro_strongly_typed_alias.hpp"
 #include "shake/core/type_traits/tagged_type.hpp"
 #include "shake/core/type_traits/type_id.hpp"
-#include "shake/core/data_structures/set.hpp"
+#include "shake/core/std/set.hpp"
 #include "shake/ecs/entity/entity.hpp"
 
 namespace shake {
