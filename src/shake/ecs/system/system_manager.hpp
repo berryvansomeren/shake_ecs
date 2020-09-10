@@ -3,14 +3,11 @@
 
 #include <memory>
 
-#include <pybind11/pybind11.h>
-
 #include "shake/core/contracts/contracts.hpp"
 #include "shake/core/std/map.hpp"
 #include "shake/core/macros/macro_debug_only.hpp"
 
 #include "shake/ecs/system/system.hpp"
-#include "shake/ecs/system/python_system.hpp"
 
 namespace shake {
 namespace ecs {
@@ -42,30 +39,6 @@ public:
         check_system_type_is_valid<System_T>();
         const auto system_type_id = System::TypeId{ type_id::get<System_T>() };
         m_systems.emplace( system_type_id, system ); // COPIES!!!
-    }
-
-    //----------------------------------------------------------------
-    // copies the system to the system map
-    inline void add_python_system( const std::shared_ptr<System>& system )
-    {
-        // Okay this is complex.
-        // If we would simply copy the shared pointer to the map,
-        // the related python object will be lost,
-        // and the System which actually has an underlying python implementation,
-        // will decay into a System without python implementation,
-        // resulting in pure virtual functions being called.
-        // We therefore need to do a complex copy.
-        // This process relies on the python implementation defining a clone function!
-        // Also see: https://github.com/pybind/pybind11/issues/1049
-        auto python_system = pybind11::cast( system );
-        auto cloned_python_system = python_system.attr( "clone" )();
-        auto keep_python_state_alive = std::make_shared<pybind11::object>( cloned_python_system );
-        auto ptr = cloned_python_system.cast<PythonSystem*>();
-
-        // This uses the aliasing shared ptr constructor,
-        // which makes a distinciton between the object that it owns / refers to
-        // and the object / data that it actually stores
-        //m_systems.emplace_back( keep_python_state_alive, ptr );
     }
 
     //----------------------------------------------------------------

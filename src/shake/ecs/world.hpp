@@ -96,16 +96,6 @@ public:
         m_system_manager.add_system( system );
     }
 
-    inline void add_python_system( std::shared_ptr<System> system )
-    {
-        //system->update( 1.3f, nullptr, std::vector<EntityId> { } );
-
-        auto system2 = std::shared_ptr<System>( system );
-        //system2->update( 1.3f, nullptr, std::vector<EntityId> { } );
-        m_system_manager.add_python_system( system );
-
-    }
-
     void update_systems( float dt )
     {
         m_system_manager.update_all_systems( this, dt, m_entity_manager.get_entity_id_set() );

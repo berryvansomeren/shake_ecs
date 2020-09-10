@@ -1,0 +1,13 @@
+[
+    {
+        "target_name" : "shake_ecs",
+        "target_type" : "shared_library",
+        "source_directory_path" : "src/",
+        "dependencies" : [
+            "glm",
+            "shake_core",
+            "shake_graphics",
+            "shake_hid"
+        ]
+    }
+]
